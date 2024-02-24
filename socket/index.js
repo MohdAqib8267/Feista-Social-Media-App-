@@ -52,9 +52,10 @@
 
 
 
+const dotenv=require('dotenv');
+dotenv.config();
 
-
-const io = require("socket.io")(8800, {
+const io = require("socket.io")(process.env.PORT, {
     cors: {
       origin: "https://feista.vercel.app/",
     },
