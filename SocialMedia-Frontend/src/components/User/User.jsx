@@ -20,7 +20,7 @@ const User = ({person,id}) => {
     try {
 
       
-      const createChat = await axios.post(`http://localhost:5000/chat`,{
+      const createChat = await axios.post(`https://feista.vercel.app/chat`,{
         senderId: user?.user?._id,
         receiverId:person?._id
       })

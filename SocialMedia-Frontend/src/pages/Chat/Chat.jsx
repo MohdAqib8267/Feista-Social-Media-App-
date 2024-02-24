@@ -150,7 +150,7 @@ const Chat = () => {
     const getChats = async () => {
       try {
         const data = await axios.get(
-                    `http://localhost:5000/chat/${user.user._id}`
+                    `https://feista.vercel.app/chat/${user.user._id}`
                   );
         setChats(data.data);
         // console.log(data);

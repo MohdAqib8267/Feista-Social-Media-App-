@@ -11,7 +11,7 @@ const Conversation = ({ data, currentUser ,online}) => {
 
     const getUserData = async () => {
       try {
-        const data = await axios.get(`http://localhost:5000/user/${userId}`);
+        const data = await axios.get(`https://feista.vercel.app/user/${userId}`);
         console.log(data);
         setUserData(data.data);
       } catch (error) {

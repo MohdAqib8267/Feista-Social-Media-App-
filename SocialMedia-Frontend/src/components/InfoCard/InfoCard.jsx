@@ -23,7 +23,7 @@ const InfoCard = () => {
       }
       else{
         console.log("fetching");
-        const profileUser = await axios.get(`http://localhost:5000/user/${profileUserId}`);
+        const profileUser = await axios.get(`https://feista.vercel.app/user/${profileUserId}`);
         setProfileUser(profileUser);
         console.log(profileUser);
       }

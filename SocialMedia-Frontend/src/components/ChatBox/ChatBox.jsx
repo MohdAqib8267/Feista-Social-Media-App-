@@ -167,7 +167,7 @@ import { io } from "socket.io-client";
 
 const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
 
-  const socket = io("http://localhost:5000");
+  const socket = io("https://feista.vercel.app/");
   const [userData, setUserData] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -181,7 +181,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
     const userId = chat?.members?.find((id) => id !== currentUser);
     const getUserData = async () => {
       try {
-        const data = await axios.get(`http://localhost:5000/user/${userId}`);
+        const data = await axios.get(`https://feista.vercel.app/user/${userId}`);
         setUserData(data.data);
       } catch (error) {
         console.log(error);
@@ -196,7 +196,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
     const fetchMessages = async () => {
       try {
         const data = await axios.get(
-          `http://localhost:5000/message/${chat._id}`
+          `https://feista.vercel.app/message/${chat._id}`
         );
         setMessages(data.data);
       } catch (error) {
@@ -245,7 +245,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
     // send message to database
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/message`,
+        `https://feista.vercel.app/message`,
         message
       );
       setNewMessage("");

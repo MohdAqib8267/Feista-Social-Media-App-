@@ -12,7 +12,7 @@ const FollowersCard = () => {
   
   useEffect(()=>{
     const fetchPersons = async()=>{
-      let data = await axios.get('http://localhost:5000/user');
+      let data = await axios.get('https://feista.vercel.app/user');
       
       // setPersons(data.data.slice(-5));
       setPersons(data.data);
